@@ -1,1 +1,773 @@
 
+/* ===================================
+   RESPONSIVE.CSS - Estilos Responsivos
+   =================================== */
+
+/* Variables para breakpoints */
+:root {
+    --mobile-small: 320px;
+    --mobile: 480px;
+    --tablet: 768px;
+    --desktop-small: 992px;
+    --desktop: 1200px;
+    --desktop-large: 1400px;
+}
+
+/* ===================================
+   TABLET - 768px y menor
+   =================================== */
+@media screen and (max-width: 768px) {
+    
+    /* Container responsivo */
+    .container {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+    
+    /* ============ NAVEGACIÓN ============ */
+    .navbar {
+        padding: 0.8rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .nav-logo {
+        font-size: 1.3rem;
+    }
+    
+    .nav-logo i {
+        font-size: 1.5rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+        gap: 0;
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+        display: block;
+        border-radius: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+        z-index: 1001;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    /* ============ HERO SECTION ============ */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 20px 50px;
+        min-height: 90vh;
+    }
+    
+    .hero-content {
+        order: 2;
+        padding: 1rem;
+    }
+    
+    .hero-image {
+        order: 1;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn-primary, .btn-secondary, .btn-cta {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    /* ============ ESTADÍSTICAS ============ */
+    .stats {
+        padding: 3rem 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .stat-item i {
+        font-size: 2.5rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.9rem;
+    }
+    
+    /* ============ DESTINOS ============ */
+    .destinations {
+        padding: 4rem 0;
+    }
+    
+    .destinations h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .destination-card {
+        max-width: 100%;
+    }
+    
+    .card-content {
+        padding: 1.2rem;
+    }
+    
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .card-content p {
+        font-size: 0.9rem;
+    }
+    
+    /* ============ CULTURA ============ */
+    .culture {
+        padding: 4rem 0;
+    }
+    
+    .culture-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .culture-text h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .culture-text p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .culture-list {
+        margin: 1.5rem 0;
+    }
+    
+    .culture-list li {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .culture-text {
+        text-align: center;
+    }
+    
+    /* ============ GASTRONOMÍA ============ */
+    .gastronomy {
+        padding: 4rem 0;
+    }
+    
+    .gastronomy h2 {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .gastronomy-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .food-card h3 {
+        font-size: 1.1rem;
+        margin: 0.8rem 0 0.4rem;
+    }
+    
+    .food-card p {
+        font-size: 0.85rem;
+        padding: 0 0.8rem 1rem;
+    }
+    
+    /* ============ CTA SECTION ============ */
+    .cta-section {
+        padding: 3rem 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content p {
+        font-size: 1.1rem;
+    }
+    
+    /* ============ CONTACTO ============ */
+    .contact {
+        padding: 4rem 0;
+    }
+    
+    .contact h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .contact-form {
+        order: 1;
+    }
+    
+    .contact-item {
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-item p {
+        font-size: 0.9rem;
+    }
+    
+    /* ============ FOOTER ============ */
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-section h3,
+    .footer-section h4 {
+        margin-bottom: 0.8rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* ===================================
+   MÓVIL - 480px y menor
+   =================================== */
+@media screen and (max-width: 480px) {
+    
+    /* ============ NAVEGACIÓN ============ */
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-logo span {
+        display: none;
+    }
+    
+    .nav-menu {
+        top: 60px;
+        padding: 1.5rem 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    /* ============ HERO SECTION ============ */
+    .hero {
+        padding: 80px 15px 40px;
+        min-height: 85vh;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-image img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    /* ============ ESTADÍSTICAS ============ */
+    .stats {
+        padding: 2.5rem 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stat-item {
+        padding: 1rem;
+    }
+    
+    .stat-item i {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.8rem;
+    }
+    
+    /* ============ DESTINOS ============ */
+    .destinations {
+        padding: 3rem 0;
+    }
+    
+    .destinations h2 {
+        font-size: 1.8rem;
+    }
+    
+    .destinations-grid {
+        gap: 1rem;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    /* ============ CULTURA ============ */
+    .culture {
+        padding: 3rem 0;
+    }
+    
+    .culture-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .culture-text p {
+        font-size: 0.9rem;
+    }
+    
+    .culture-list li {
+        font-size: 0.9rem;
+    }
+    
+    /* ============ GASTRONOMÍA ============ */
+    .gastronomy {
+        padding: 3rem 0;
+    }
+    
+    .gastronomy h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .gastronomy-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .food-card img {
+        height: 150px;
+    }
+    
+    /* ============ CTA SECTION ============ */
+    .cta-section {
+        padding: 2.5rem 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    .btn-cta {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+    
+    /* ============ CONTACTO ============ */
+    .contact {
+        padding: 3rem 0;
+    }
+    
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .contact-item i {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+/* ===================================
+   MÓVIL PEQUEÑO - 320px y menor
+   =================================== */
+@media screen and (max-width: 320px) {
+    
+    /* ============ GENERAL ============ */
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* ============ HERO ============ */
+    .hero {
+        padding: 70px 10px 30px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary, .btn-secondary, .btn-cta {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.2rem;
+    }
+    
+    /* ============ SECCIONES ============ */
+    .destinations,
+    .culture,
+    .gastronomy,
+    .contact {
+        padding: 2.5rem 0;
+    }
+    
+    .destinations h2,
+    .culture-text h2,
+    .gastronomy h2,
+    .contact h2 {
+        font-size: 1.6rem;
+    }
+    
+    /* ============ ESTADÍSTICAS ============ */
+    .stat-item {
+        padding: 0.8rem;
+    }
+    
+    .stat-item i {
+        font-size: 1.8rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.5rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===================================
+   TABLET HORIZONTAL - 992px a 1199px
+   =================================== */
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    
+    .container {
+        max-width: 960px;
+    }
+    
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gastronomy-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===================================
+   DESKTOP GRANDE - 1400px y mayor
+   =================================== */
+@media screen and (min-width: 1400px) {
+    
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.4rem;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .gastronomy-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===================================
+   ORIENTACIÓN - Landscape
+   =================================== */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    
+    .hero {
+        min-height: 100vh;
+        padding-top: 60px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    .stats {
+        padding: 2rem 0;
+    }
+    
+    .nav-menu {
+        top: 50px;
+    }
+}
+
+/* ===================================
+   ACCESIBILIDAD - Reduce Motion
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero-image img {
+        transform: none !important;
+    }
+    
+    .destination-card:hover,
+    .food-card:hover,
+    .gallery-item:hover {
+        transform: none !important;
+    }
+}
+
+/* ===================================
+   ALTO CONTRASTE
+   =================================== */
+@media (prefers-contrast: high) {
+    
+    :root {
+        --primary-color: #000;
+        --secondary-color: #333;
+        --text-color: #000;
+        --light-color: #fff;
+    }
+    
+    .hero {
+        background: #fff;
+        color: #000;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-cta {
+        border: 2px solid #000;
+        font-weight: bold;
+    }
+}
+
+/* ===================================
+   MODO OSCURO
+   =================================== */
+@media (prefers-color-scheme: dark) {
+    
+    :root {
+        --primary-color: #f39c12;
+        --secondary-color: #e67e22;
+        --dark-color: #ecf0f1;
+        --light-color: #2c3e50;
+        --text-color: #ecf0f1;
+    }
+    
+    body {
+        background-color: #1a1a1a;
+        color: var(--text-color);
+    }
+    
+    .navbar {
+        background: rgba(42, 42, 42, 0.95);
+    }
+    
+    .hero {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+    
+    .destinations,
+    .gastronomy {
+        background: #2c3e50;
+    }
+    
+    .destination-card,
+    .food-card {
+        background: #34495e;
+        color: var(--text-color);
+    }
+    
+    .footer {
+        background: #1a1a1a;
+    }
+}
+
+/* ===================================
+   IMPRESIÓN
+   =================================== */
+@media print {
+    
+    .navbar,
+    .hamburger,
+    .social-links,
+    .btn-primary,
+    .btn-secondary,
+    .btn-cta,
+    .hero-buttons {
+        display: none !important;
+    }
+    
+    .hero {
+        min-height: auto;
+        page-break-after: always;
+    }
+    
+    .destinations,
+    .culture,
+    .gastronomy,
+    .contact {
+        page-break-inside: avoid;
+        padding: 1rem 0;
+    }
+    
+    .hero-text h1 {
+        color: #000 !important;
+        font-size: 2rem;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000 !important;
+        background: #fff !important;
+    }
+}
