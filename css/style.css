@@ -1,0 +1,10 @@
+/* css/style.css - Estilos base */
+@import url('components.css');
+@import url('responsive.css');
+
+/* Variables CSS */
+:root {
+    --primary-color: #333;
+    --secondary-color: #666;
+    --accent-color: #007bff;
+}
