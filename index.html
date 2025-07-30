@@ -3,25 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Descubre Oaxaca - Turismo y Aventura</title>
+    <meta name="description" content="Explora la belleza de Oaxaca: cultura, gastronomía, tradiciones y paisajes únicos. Tu guía completa de turismo.">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <!-- Navegación y logo -->
-    </header>
-    
-    <main>
-        <!-- Contenido principal -->
-    </main>
-    
-    <footer>
-        <!-- Pie de página -->
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-mountain"></i>
+                <span>Descubre Oaxaca</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#cultura">Cultura</a></li>
+                <li><a href="#gastronomia">Gastronomía</a></li>
+                <li><a href="pages/galeria.html" class="highlight-link">🏛️ Galería Completa</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Bienvenido a Oaxaca</h1>
+                <p>Tierra de tradiciones milenarias, sabores únicos y paisajes extraordinarios</p>
+                <div class="hero-buttons">
+                    <a href="#destinos" class="btn-primary">Explorar Destinos</a>
+                    <a href="pages/galeria.html" class="btn-secondary">Ver Galería</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/images/hero-oaxaca.jpg" alt="Vista panorámica de Oaxaca" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-church"></i>
+                    <h3>500+</h3>
+                    <p>Sitios Históricos</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>1000+</h3>
+                    <p>Platillos Tradicionales</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-palette"></i>
+                    <h3>16</h3>
+                    <p>Grupos Étnicos</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-award"></i>
+                    <h3>2</h3>
+                    <p>Patrimonios UNESCO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section id="destinos" class="destinations">
+        <div class="container">
+            <h2>Destinos Imperdibles</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="assets/images/monte-alban.jpg" alt="Monte Albán" loading="lazy">
+                    <div class="card-content">
+                        <h3>Monte Albán</h3>
+                        <p>Sitio arqueológico zapoteca declarado Patrimonio de la Humanidad</p>
+                        <a href="pages/galeria.html#monte-alban" class="card-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <img src="assets/images/hierve-agua.jpg" alt="Hierve el Agua" loading="lazy">
+                    <div class="card-content">
+                        <h3>Hierve el Agua</h3>
+                        <p>Cascadas petrificadas naturales con aguas termales curativas</p>
+                        <a href="pages/galeria.html#hierve-agua" class="card-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <img src="assets/images/centro-historico.jpg" alt="Centro Histórico" loading="lazy">
+                    <div class="card-content">
+                        <h3>Centro Histórico</h3>
+                        <p>Arquitectura colonial y vida cultural en el corazón de la ciudad</p>
+                        <a href="pages/galeria.html#centro-historico" class="card-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <img src="assets/images/mitla.jpg" alt="Mitla" loading="lazy">
+                    <div class="card-content">
+                        <h3>Mitla</h3>
+                        <p>La "Ciudad de los Muertos" con increíbles mosaicos prehispánicos</p>
+                        <a href="pages/galeria.html#mitla" class="card-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="cultura" class="culture">
+        <div class="container">
+            <div class="culture-content">
+                <div class="culture-text">
+                    <h2>Rica Herencia Cultural</h2>
+                    <p>Oaxaca es hogar de 16 grupos étnicos, cada uno con sus propias tradiciones, lenguas y costumbres que han perdurado por siglos.</p>
+                    <ul class="culture-list">
+                        <li><i class="fas fa-check"></i> Artesanías únicas como alebrije y barro negro</li>
+                        <li><i class="fas fa-check"></i> Festivales tradicionales como la Guelaguetza</li>
+                        <li><i class="fas fa-check"></i> Textiles bordados a mano con técnicas ancestrales</li>
+                        <li><i class="fas fa-check"></i> Música y danzas autóctonas</li>
+                    </ul>
+                    <a href="pages/galeria.html#cultura" class="btn-primary">Ver Tradiciones</a>
+                </div>
+                <div class="culture-image">
+                    <img src="assets/images/guelaguetza.jpg" alt="Danza tradicional Guelaguetza" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gastronomy Section -->
+    <section id="gastronomia" class="gastronomy">
+        <div class="container">
+            <h2>Gastronomía Mundial</h2>
+            <p class="section-subtitle">Sabores que han conquistado el mundo</p>
+            
+            <div class="gastronomy-grid">
+                <div class="food-card">
+                    <img src="assets/images/mole.jpg" alt="Mole Oaxaqueño" loading="lazy">
+                    <h3>Mole</h3>
+                    <p>Los famosos siete moles de Oaxaca, cada uno con su sabor único y especial</p>
+                </div>
+                
+                <div class="food-card">
+                    <img src="assets/images/mezcal.jpg" alt="Mezcal tradicional" loading="lazy">
+                    <h3>Mezcal</h3>
+                    <p>La bebida ancestral con Denominación de Origen, destilada artesanalmente</p>
+                </div>
+                
+                <div class="food-card">
+                    <img src="assets/images/tlayudas.jpg" alt="Tlayudas oaxaqueñas" loading="lazy">
+                    <h3>Tlayudas</h3>
+                    <p>La "pizza oaxaqueña" con ingredientes frescos y tortilla crujiente</p>
+                </div>
+                
+                <div class="food-card">
+                    <img src="assets/images/chapulines.jpg" alt="Chapulines con sal de gusano" loading="lazy">
+                    <h3>Chapulines</h3>
+                    <p>Deliciosos saltamontes tostados, un manjar prehispánico lleno de proteína</p>
+                </div>
+            </div>
+            
+            <div class="gastronomy-cta">
+                <a href="pages/galeria.html#gastronomia" class="btn-primary">Ver Más Platillos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para tu Aventura?</h2>
+                <p>Descubre todos los rincones mágicos de Oaxaca en nuestra galería completa</p>
+                <a href="pages/galeria.html" class="btn-cta">
+                    <i class="fas fa-images"></i>
+                    Explorar Galería Completa
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Centro Histórico, Oaxaca de Juárez</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+52 951 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@descubreoaxaca.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <input type="text" placeholder="Tu nombre" required>
+                    <input type="email" placeholder="Tu email" required>
+                    <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-mountain"></i> Descubre Oaxaca</h3>
+                    <p>Tu guía completa para explorar la riqueza cultural y natural de Oaxaca.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#destinos">Destinos</a></li>
+                        <li><a href="#cultura">Cultura</a></li>
+                        <li><a href="#gastronomia">Gastronomía</a></li>
+                        <li><a href="pages/galeria.html">Galería</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Términos de Uso</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Descubre Oaxaca. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
-    
-    <script src="js/utils.js"></script>
-    <script src="js/gallery.js"></script>
+
     <script src="js/main.js"></script>
 </body>
 </html>
