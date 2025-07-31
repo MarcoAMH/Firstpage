@@ -242,32 +242,44 @@ function initTypingEffect() {
     const heroTitle = document.querySelector('.hero-title');
     if (!heroTitle) return;
     
-    // Textos separados para manejar el HTML correctamente
+    // Desactivar el efecto typing por ahora - mostrar texto completo
+    // El texto ya está bien estructurado en el HTML
+    heroTitle.style.opacity = '0';
+    
+    // Animar la aparición del título completo
+    setTimeout(() => {
+        heroTitle.style.transition = 'opacity 1s ease-in-out';
+        heroTitle.style.opacity = '1';
+    }, 1000);
+    
+    // Si quieres reactivar el typing effect más tarde, descomenta esto:
+    /*
     const line1 = "San Pedro y San Pablo";
     const line2 = "Teposcolula";
     
-    // Limpiar el contenido inicial
-    heroTitle.innerHTML = '';
+    heroTitle.innerHTML = '<span id="line1"></span><br><span class="highlight" id="line2"></span>';
+    
+    const line1Element = document.getElementById('line1');
+    const line2Element = document.getElementById('line2');
     
     let i = 0;
-    const typeSpeed = 80;
+    const typeSpeed = 100;
     
     function typeWriter() {
         if (i < line1.length) {
-            heroTitle.innerHTML = line1.substring(0, i + 1) + '<br><span class="highlight"></span>';
+            line1Element.textContent = line1.substring(0, i + 1);
             i++;
             setTimeout(typeWriter, typeSpeed);
         } else if (i < line1.length + line2.length) {
             const line2Index = i - line1.length;
-            const currentLine2 = line2.substring(0, line2Index + 1);
-            heroTitle.innerHTML = line1 + '<br><span class="highlight">' + currentLine2 + '</span>';
+            line2Element.textContent = line2.substring(0, line2Index + 1);
             i++;
             setTimeout(typeWriter, typeSpeed);
         }
     }
     
-    // Iniciar el efecto después de un pequeño delay
     setTimeout(typeWriter, 1500);
+    */
 }
 
 // ========== FILTROS DE GALERÍA ==========
