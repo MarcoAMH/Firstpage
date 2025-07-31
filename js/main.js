@@ -242,21 +242,32 @@ function initTypingEffect() {
     const heroTitle = document.querySelector('.hero-title');
     if (!heroTitle) return;
     
-    const originalText = heroTitle.innerHTML;
+    // Textos separados para manejar el HTML correctamente
+    const line1 = "San Pedro y San Pablo";
+    const line2 = "Teposcolula";
+    
+    // Limpiar el contenido inicial
     heroTitle.innerHTML = '';
     
     let i = 0;
-    const typeSpeed = 100;
+    const typeSpeed = 80;
     
     function typeWriter() {
-        if (i < originalText.length) {
-            heroTitle.innerHTML += originalText.charAt(i);
+        if (i < line1.length) {
+            heroTitle.innerHTML = line1.substring(0, i + 1) + '<br><span class="highlight"></span>';
+            i++;
+            setTimeout(typeWriter, typeSpeed);
+        } else if (i < line1.length + line2.length) {
+            const line2Index = i - line1.length;
+            const currentLine2 = line2.substring(0, line2Index + 1);
+            heroTitle.innerHTML = line1 + '<br><span class="highlight">' + currentLine2 + '</span>';
             i++;
             setTimeout(typeWriter, typeSpeed);
         }
     }
     
-    setTimeout(typeWriter, 1000);
+    // Iniciar el efecto después de un pequeño delay
+    setTimeout(typeWriter, 1500);
 }
 
 // ========== FILTROS DE GALERÍA ==========
