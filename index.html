@@ -3,392 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubre San Pedro y San Pablo Teposcolula, Pueblo Mágico de Oaxaca. Conoce sus lugares emblemáticos, historia y tradiciones de la Mixteca Alta.">
-    <meta name="keywords" content="Teposcolula, Pueblo Mágico, Oaxaca, Turismo, Mixteca Alta, Convento, Capilla Abierta">
-    <title>San Pedro y San Pablo Teposcolula - Pueblo Mágico</title>
-    
-    <!-- Enlaces a archivos CSS y JavaScript -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>El Reloj Histórico de Teposcolula</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(42, 82, 152, 0.9) 100%);
+        }
+
+        .clock-container {
+            position: relative;
+            margin-bottom: 3rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .clock {
+            width: 250px;
+            height: 250px;
+            border: 15px solid #d4af37;
+            border-radius: 50%;
+            background: radial-gradient(circle, #f5f5dc 0%, #e8dcc0 100%);
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .clock::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #d4af37;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            background: #333;
+            border-radius: 10px;
+        }
+
+        .hour {
+            width: 6px;
+            height: 60px;
+            margin-left: -3px;
+            animation: rotateHour 43200s linear infinite;
+        }
+
+        .minute {
+            width: 4px;
+            height: 85px;
+            margin-left: -2px;
+            animation: rotateMinute 3600s linear infinite;
+        }
+
+        .second {
+            width: 2px;
+            height: 95px;
+            margin-left: -1px;
+            background: #c41e3a;
+            animation: rotateSecond 60s linear infinite;
+        }
+
+        @keyframes rotateHour {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotateMinute {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotateSecond {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .clock-numbers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .number {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .number span {
+            display: inline-block;
+            transform: translateY(10px);
+        }
+
+        h1 {
+            color: #d4af37;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #f5f5dc;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .date-badge {
+            background: #d4af37;
+            color: #1e3c72;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: #fff;
+        }
+
+        .info-section {
+            margin-bottom: 4rem;
+        }
+
+        .info-section h2 {
+            color: #1e3c72;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 4px solid #d4af37;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f5f5dc 0%, #e8dcc0 100%);
+            border-left: 6px solid #d4af37;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card h3 {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            text-align: left;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: #f5f5dc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1rem;
+        }
+
+        .bell-icon {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+            animation: swing 2s ease-in-out infinite;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-15deg); }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <img src="assets/img/logo-teposcolula.png" alt="Logo Teposcolula" class="logo-img">
-                    <span class="logo-text">Teposcolula</span>
+    <div class="hero">
+        <div class="clock-container">
+            <div class="clock">
+                <div class="clock-numbers">
+                    <div class="number" style="transform: rotate(0deg);"><span style="transform: rotate(0deg);">12</span></div>
+                    <div class="number" style="transform: rotate(90deg);"><span style="transform: rotate(-90deg);">3</span></div>
+                    <div class="number" style="transform: rotate(180deg);"><span style="transform: rotate(-180deg);">6</span></div>
+                    <div class="number" style="transform: rotate(270deg);"><span style="transform: rotate(-270deg);">9</span></div>
                 </div>
-                
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#inicio" class="nav-link">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#lugares" class="nav-link">Lugares</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#historia" class="nav-link">Historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#galeria" class="nav-link">Galería</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#info" class="nav-link">Información</a>
-                    </li>
-                   
-                </ul>
-                
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <video class="hero-video" autoplay muted loop>
-            <source src="assets/videos/teposcolula-hero.mp4" type="video/mp4">
-            <!-- Fallback image si no hay video -->
-        </video>
-        <div class="hero-content">
-            <div class="pueblo-magico-badge">
-                <img src="assets/img/pueblo-magico-logo.png" alt="Pueblo Mágico">
-                <span>Pueblo Mágico</span>
-            </div>
-            <h1 class="hero-title">San Pedro y San Pablo<br><span class="highlight">Teposcolula</span></h1>
-            <p class="hero-subtitle">Joya Colonial de la Mixteca Alta Oaxaqueña</p>
-            <p class="hero-description">Descubre la magia de uno de los tesoros arquitectónicos más importantes de México, donde la historia colonial se encuentra con la tradición mixteca.</p>
-            <div class="hero-buttons">
-                <a href="#lugares" class="btn btn-primary">Explorar Lugares</a>
-                <a href="#historia" class="btn btn-secondary">Conoce su Historia</a>
+                <div class="hand hour"></div>
+                <div class="hand minute"></div>
+                <div class="hand second"></div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
+        
+        <h1>El Reloj Histórico de Teposcolula</h1>
+        <p class="subtitle">Un símbolo de modernidad en la Mixteca Alta</p>
+        <div class="date-badge">16 de Septiembre de 1902</div>
+        <div class="bell-icon">🔔</div>
+    </div>
 
-    <!-- Lugares Emblemáticos -->
-    <section id="lugares" class="lugares-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Lugares Emblemáticos</h2>
-                <p class="section-subtitle">Descubre los sitios que hacen único a Teposcolula</p>
-            </div>
+    <div class="content">
+        <div class="info-section">
+            <h2>La Inauguración</h2>
+            <p>En plenos festejos del 92° aniversario de la independencia de México, el 16 de septiembre de 1902, se inauguró el reloj público municipal de San Pedro y San Pablo Teposcolula. Este acontecimiento marcó un hito en la transformación urbana de la jefatura política de uno de los distritos más importantes de Oaxaca.</p>
             
-            <div class="lugares-grid">
-                <!-- Templo y Ex-Convento -->
-                <article class="lugar-card featured">
-                    <div class="lugar-image">
-                        <img src="assets/img/templo-convento.jpg" alt="Templo y Ex-Convento de San Pedro y San Pablo">
-                        <div class="lugar-overlay">
-                            <span class="lugar-category">Patrimonio Histórico</span>
-                        </div>
-                    </div>
-                    <div class="lugar-content">
-                        <h3 class="lugar-title">Templo y Ex-Convento de San Pedro y San Pablo</h3>
-                        <p class="lugar-description">Magnífico conjunto arquitectónico del siglo XVI construido por la orden dominica. Considerado una de las joyas del arte novohispano en México.</p>
-                        <ul class="lugar-features">
-                            <li>Arquitectura del siglo XVI</li>
-                            <li>Arte sacro colonial</li>
-                            <li>Retablos barrocos</li>
-                        </ul>
-                        <a href="pages/templo-convento.html" class="btn btn-outline">Conoce más</a>
-                    </div>
-                </article>
-
-                <!-- Capilla Abierta -->
-                <article class="lugar-card">
-                    <div class="lugar-image">
-                        <img src="assets/img/capilla-abierta.jpg" alt="Capilla Abierta de Teposcolula">
-                        <div class="lugar-overlay">
-                            <span class="lugar-category">Arquitectura Única</span>
-                        </div>
-                    </div>
-                    <div class="lugar-content">
-                        <h3 class="lugar-title">Capilla Abierta</h3>
-                        <p class="lugar-description">Una de las capillas abiertas más grandes y mejor conservadas de México. Utilizada para la evangelización de los pueblos indígenas.</p>
-                        <ul class="lugar-features">
-                            <li>Arquitectura excepcional</li>
-                            <li>Historia evangelizadora</li>
-                            <li>Acústica perfecta</li>
-                        </ul>
-                        <a href="pages/capilla-abierta.html" class="btn btn-outline">Explorar</a>
-                    </div>
-                </article>
-
-                <!-- Centro Histórico -->
-                <article class="lugar-card">
-                    <div class="lugar-image">
-                        <img src="assets/img/centro-historico.jpg" alt="Centro Histórico de Teposcolula">
-                        <div class="lugar-overlay">
-                            <span class="lugar-category">Patrimonio Cultural</span>
-                        </div>
-                    </div>
-                    <div class="lugar-content">
-                        <h3 class="lugar-title">Centro Histórico</h3>
-                        <p class="lugar-description">Hermosas calles empedradas rodeadas de casas coloniales que conservan la arquitectura tradicional de la región.</p>
-                        <ul class="lugar-features">
-                            <li>Arquitectura colonial</li>
-                            <li>Calles empedradas</li>
-                            <li>Ambiente tradicional</li>
-                        </ul>
-                        <a href="pages/centro-historico.html" class="btn btn-outline">Recorrer</a>
-                    </div>
-                </article>
-
-                <!-- Zona Arqueológica -->
-                <article class="lugar-card">
-                    <div class="lugar-image">
-                        <img src="assets/img/zona-arqueologica.jpg" alt="Zona Arqueológica Pueblo Viejo">
-                        <div class="lugar-overlay">
-                            <span class="lugar-category">Arqueología</span>
-                        </div>
-                    </div>
-                    <div class="lugar-content">
-                        <h3 class="lugar-title">Zona Arqueológica "Pueblo Viejo"</h3>
-                        <p class="lugar-description">Sitio arqueológico que muestra los vestigios de la antigua ciudad prehispánica antes de la llegada de los españoles.</p>
-                        <ul class="lugar-features">
-                            <li>Cultura mixteca</li>
-                            <li>Vestigios prehispánicos</li>
-                            <li>Historia ancestral</li>
-                        </ul>
-                        <a href="pages/zona-arqueologica.html" class="btn btn-outline">Descubrir</a>
-                    </div>
-                </article>
-
-                <!-- Casa de la Cacica -->
-                <article class="lugar-card">
-                    <div class="lugar-image">
-                        <img src="assets/img/casa-cacica.jpg" alt="Casa de la Cacica">
-                        <div class="lugar-overlay">
-                            <span class="lugar-category">Historia Colonial</span>
-                        </div>
-                    </div>
-                    <div class="lugar-content">
-                        <h3 class="lugar-title">Casa de la Cacica</h3>
-                        <p class="lugar-description">Histórica construcción colonial que albergó a importantes personajes de la época y conserva elementos arquitectónicos únicos.</p>
-                        <ul class="lugar-features">
-                            <li>Arquitectura colonial</li>
-                            <li>Historia regional</li>
-                            <li>Patrimonio cultural</li>
-                        </ul>
-                        <a href="pages/casa-cacica.html" class="btn btn-outline">Visitar</a>
-                    </div>
-                </article>
-
-                <!-- Paisajes Naturales -->
-                <article class="lugar-card">
-                    <div class="lugar-image">
-                        <img src="assets/img/paisajes-naturales.jpg" alt="Paisajes de la Mixteca Alta">
-                        <div class="lugar-overlay">
-                            <span class="lugar-category">Naturaleza</span>
-                        </div>
-                    </div>
-                    <div class="lugar-content">
-                        <h3 class="lugar-title">Paisajes de la Mixteca Alta</h3>
-                        <p class="lugar-description">Impresionantes vistas de montañas, valles y formaciones rocosas que rodean este hermoso pueblo mágico.</p>
-                        <ul class="lugar-features">
-                            <li>Montañas y valles</li>
-                            <li>Senderismo</li>
-                            <li>Fotografía paisajística</li>
-                        </ul>
-                        <a href="pages/paisajes.html" class="btn btn-outline">Admirar</a>
-                    </div>
-                </article>
+            <div class="highlight-box">
+                <p><strong>El reloj se instaló en el centro de la parte superior del Palacio Municipal</strong>, declarado monumento histórico desde 1987. Se le adaptó un cuarto de máquinas y un aparato con tres campanas en la parte exterior, protegidas con una sombrilla de estructura de madera cubierta de metal, permitiendo que su sonido se escuchara a mayor distancia.</p>
             </div>
         </div>
-    </section>
 
-    <!-- Historia Section -->
-    <section id="historia" class="historia-section">
-        <div class="container">
-            <div class="historia-content">
-                <div class="historia-text">
-                    <div class="section-header">
-                        <h2 class="section-title">Historia Milenaria</h2>
-                        <p class="section-subtitle">Un viaje a través del tiempo</p>
-                    </div>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Época Prehispánica</h4>
-                                <p>Asentamiento mixteco conocido como "Lugar de las Flores", importante centro ceremonial y comercial.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>1558 - Fundación Colonial</h4>
-                                <p>Los dominicos establecen el convento y comienza la construcción del magnífico conjunto arquitectónico.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Siglo XVI-XVII</h4>
-                                <p>Época dorada de construcción y consolidación como importante centro religioso regional.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>2015 - Pueblo Mágico</h4>
-                                <p>Reconocimiento oficial como Pueblo Mágico por su riqueza histórica y cultural.</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="info-section">
+            <h2>Características Técnicas</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🇫🇷 Origen Francés</h3>
+                    <p>El reloj funciona con un sistema mecánico de hechura francesa, representando la tecnología europea de vanguardia del cambio de siglo.</p>
                 </div>
                 
-                <div class="historia-visual">
-                    <div class="historia-image">
-                        <img src="assets/img/historia-teposcolula.jpg" alt="Historia de Teposcolula">
-                    </div>
+                <div class="feature-card">
+                    <h3>💎 La Esmeralda</h3>
+                    <p>Cuenta con placas del fabricante "La Esmeralda México, Hauser Zivy y Cía", una de las joyerías más importantes de México propiedad de judíos Hauser y Zivy.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>⚡ Modernización</h3>
+                    <p>Actualmente se le ha adaptado un sistema eléctrico, manteniendo su funcionalidad después de más de 120 años de servicio.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🏛️ Resistencia</h3>
+                    <p>Ha resistido fuertes sismos como el de 1928 y el de 1999, permaneciendo en perfectas condiciones como testimonio de su calidad constructiva.</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Galería Section -->
-    <section id="galeria" class="galeria-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Galería Fotográfica</h2>
-                <p class="section-subtitle">Imágenes que capturan la esencia de Teposcolula</p>
-            </div>
+        <div class="info-section">
+            <h2>Significado Histórico</h2>
+            <p>La instalación del reloj público en Teposcolula representó mucho más que una simple medición del tiempo. Simbolizó la consolidación del <strong>tiempo laico</strong> en contraposición al tiempo religioso que había regido la vida cotidiana durante siglos.</p>
             
-            <div class="galeria-grid">
-                <div class="galeria-item" data-category="arquitectura">
-                    <img src="assets/img/galeria/galeria-1.jpg" alt="Arquitectura colonial">
-                    <div class="galeria-overlay">
-                        <h4>Arquitectura Colonial</h4>
-                    </div>
-                </div>
-                
-                <div class="galeria-item" data-category="naturaleza">
-                    <img src="assets/img/galeria/galeria-2.jpg" alt="Paisajes naturales">
-                    <div class="galeria-overlay">
-                        <h4>Paisajes Naturales</h4>
-                    </div>
-                </div>
-                
-                <div class="galeria-item" data-category="cultura">
-                    <img src="assets/img/galeria/galeria-3.jpg" alt="Tradiciones locales">
-                    <div class="galeria-overlay">
-                        <h4>Tradiciones</h4>
-                    </div>
-                </div>
-                
-                <div class="galeria-item" data-category="arquitectura">
-                    <img src="assets/img/galeria/galeria-4.jpg" alt="Detalles arquitectónicos">
-                    <div class="galeria-overlay">
-                        <h4>Detalles Únicos</h4>
-                    </div>
-                </div>
-            </div>
+            <p>Este reloj llegó a la Mixteca seis siglos después de que los monjes del priorato de Dunstable en Inglaterra usaran por primera vez un reloj mecánico en 1283, y casi cuatro siglos después de que Carlos V obsequiara el primer reloj en torre de México a Cortés, instalado en el templo franciscano de Cuernavaca en el siglo XVI.</p>
             
-            <div class="galeria-controls">
-                <button class="filter-btn active" data-filter="all">Todas</button>
-                <button class="filter-btn" data-filter="arquitectura">Arquitectura</button>
-                <button class="filter-btn" data-filter="naturaleza">Naturaleza</button>
-                <button class="filter-btn" data-filter="cultura">Cultura</button>
+            <div class="highlight-box">
+                <p><strong>El reloj formó parte de las transformaciones del Porfiriato</strong>, que bajo el lema "poca política y mucha administración" buscaba modernizar México. La ampliación de la partida del presupuesto de egresos para obras materiales en 1900 permitió que Teposcolula se sumara a esta ola de progreso material.</p>
             </div>
         </div>
-    </section>
 
-    <!-- Información Práctica -->
-    <section id="info" class="info-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Información Práctica</h2>
-                <p class="section-subtitle">Todo lo que necesitas saber para tu visita</p>
-            </div>
+        <div class="info-section">
+            <h2>Un Legado Vivo</h2>
+            <p>Al paso de los años, los demás pueblos alrededor de Teposcolula también tendrían sus relojes públicos, consolidando esta nueva forma de organizar la vida cotidiana en la región. El reloj de Teposcolula se mantiene como un testimonio tangible de aquella época de transformación y modernización.</p>
             
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">
-                        <span>📍</span>
-                    </div>
-                    <h3>Ubicación</h3>
-                    <p>Mixteca Alta, Oaxaca, México<br>
-                    A 2 horas de la ciudad de Oaxaca</p>
-                </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <span>🕐</span>
-                    </div>
-                    <h3>Horarios</h3>
-                    <p>Templo: 8:00 - 18:00 hrs<br>
-                    Museo: 10:00 - 17:00 hrs<br>
-                    Martes a Domingo</p>
-                </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <span>🎫</span>
-                    </div>
-                    <h3>Acceso</h3>
-                    <p>Entrada gratuita al templo<br>
-                    Museo: $30 pesos<br>
-                    Descuentos para estudiantes</p>
-                </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <span>🍽️</span>
-                    </div>
-                    <h3>Gastronomía</h3>
-                    <p>Mole coloradito<br>
-                    Tasajo oaxaqueño<br>
-                    Mezcal artesanal</p>
-                </div>
-            </div>
+            <p>Gracias al rescate y organización del Archivo Histórico Municipal por la Fundación Alfredo Harp Helú y ADABI de México, hoy podemos conocer los detalles de esta importante pieza de la historia local que sigue marcando el tiempo en el corazón de la Mixteca Alta.</p>
         </div>
-    </section>
+    </div>
 
-      <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>San Pedro y San Pablo Teposcolula</h4>
-                    <p>Pueblo Mágico de Oaxaca</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Enlaces Útiles</h4>
-                    <ul>
-                        <li><a href="#lugares">Lugares</a></li>
-                        <li><a href="#historia">Historia</a></li>
-                        <li><a href="#info">Información</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Visítanos</h4>
-                    <p>Descubre la magia de la Mixteca Alta</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 San Pedro y San Pablo Teposcolula. Todos los derechos reservados.</p>
-            </div>
-        </div>
+    <footer>
+        <p>El Reloj Histórico de Teposcolula - Patrimonio Cultural de Oaxaca</p>
+        <p>Más de 120 años marcando el tiempo en la Mixteca Alta</p>
     </footer>
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+
+    <script>
+        // Actualizar el reloj para que muestre la hora real
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours() % 12;
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            const hourHand = document.querySelector('.hour');
+            const minuteHand = document.querySelector('.minute');
+            const secondHand = document.querySelector('.second');
+            
+            const hourDeg = (hours * 30) + (minutes * 0.5);
+            const minuteDeg = minutes * 6;
+            const secondDeg = seconds * 6;
+            
+            hourHand.style.transform = `rotate(${hourDeg}deg)`;
+            minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
+            secondHand.style.transform = `rotate(${secondDeg}deg)`;
+        }
+        
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
