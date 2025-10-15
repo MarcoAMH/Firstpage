@@ -271,6 +271,40 @@
             text-align: left;
         }
 
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #d4af37;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #1e3c72;
+            font-style: italic;
+            font-weight: 500;
+        }
+
         footer {
             background: #1e3c72;
             color: #f5f5dc;
@@ -322,6 +356,21 @@
             
             <div class="highlight-box">
                 <p><strong>El reloj se instaló en el centro de la parte superior del Palacio Municipal</strong>, declarado monumento histórico desde 1987. Se le adaptó un cuarto de máquinas y un aparato con tres campanas en la parte exterior, protegidas con una sombrilla de estructura de madera cubierta de metal, permitiendo que su sonido se escuchara a mayor distancia.</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>📷 Galería del Reloj</h2>
+            <div class="image-gallery">
+                <div class="image-container">
+                    <img src="reloj/reloj_.png" alt="Vista del reloj público municipal en el Palacio de Teposcolula" class="gallery-image">
+                    <p class="image-caption">Vista del reloj público municipal en el Palacio de Teposcolula</p>
+                </div>
+                
+                <div class="image-container">
+                    <img src="reloj/reloj_frances.png" alt="Mecanismo y detalles del reloj francés" class="gallery-image">
+                    <p class="image-caption">Mecanismo y detalles del reloj francés</p>
+                </div>
             </div>
         </div>
 
